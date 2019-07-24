@@ -15,13 +15,16 @@ export class IngredientsComponent implements OnInit {
   changeRowColor(idIn: string)
   {
     let rowchange = document.getElementById(idIn);
-    if(rowchange.style.backgroundColor == "black")
+    if(rowchange.style.backgroundColor == "blue")
     {
-      rowchange.style.backgroundColor = "white";
+      if(confirm('Are you sure?'))
+      {
+        rowchange.style.backgroundColor = "white";
+      }
     }
     else
     {
-      rowchange.style.backgroundColor = "black";
+      rowchange.style.backgroundColor = "blue";
     }
   }
 
