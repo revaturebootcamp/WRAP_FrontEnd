@@ -17,7 +17,7 @@ export class IngredientsComponent implements OnInit {
     let rowchange = document.getElementById(idIn);
     if(rowchange.style.backgroundColor == "blue")
     {
-      if(confirm('Are you sure?'))
+      if(confirm('Are you sure you want to uncheck this item?'))
       {
         rowchange.style.backgroundColor = "white";
       }

@@ -1,0 +1,19 @@
+tr,th, table
+{
+    border: 1px solid pink;
+}
+.centered
+{
+    position:absolute;
+    width:500px;
+    height:300px;
+    left:25%;
+    top:25%;
+    margin:auto;
+}
+
+changeRowColor
+{
+    background-color: blue;
+    color: red;
+}
