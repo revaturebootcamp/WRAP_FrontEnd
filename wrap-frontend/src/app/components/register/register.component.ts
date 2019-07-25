@@ -12,4 +12,20 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
+  registerUser(usernameIn: string, password1In: string, password2In: string)
+  {
+    let password1 = password1In;
+    let password2 = password2In;
+
+    if(password1 == password2)
+    {
+      alert('Passwords match');
+    }
+    else
+    {
+      alert('Passwords do not match');
+    }
+    alert('You entered ' + usernameIn + ' as your username!');
+  }
+
 }
