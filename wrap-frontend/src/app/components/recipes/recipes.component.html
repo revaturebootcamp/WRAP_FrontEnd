@@ -1,0 +1,55 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+            <div class="osection">
+                    <button class="btn btn-danger" (click)="toggleVisibility()">Recipe</button>
+                    <div [hidden]="visibility">
+                        <form>
+                            <input type="text" name="recipe" id="recipe">
+                            <input type="number" name="quantity" id="quantity">
+                            <input type="checkbox" name="favorite" id="favorite">
+
+                            <button class="btn btn-danger" (click)="toggleVisibility()">Nutrition</button>
+                            <div [hidden]="visibility">
+                                <table>
+                                    <tr>
+                                        <th>
+                                            Serving Size
+                                        </th>
+                                        <th>
+                                            Calories
+                                        </th>
+                                        <th>
+                                            Price
+                                        </th>
+                                        <th>
+                                            Cook Time
+                                        </th>
+                                    </tr>
+                                </table>
+                                    <button class="btn btn-danger" (click)="toggleVisibility()">Ingredients</button>
+                                    <div [hidden]="visibility">
+                                        <table>
+                                            <tr>
+                                                <th>
+                                                    Name
+                                                </th>
+                                                <th>
+                                                    Mod
+                                                </th>
+                                                <th>
+                                                    Quantity
+                                                </th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+    </body>
+</html>
+
