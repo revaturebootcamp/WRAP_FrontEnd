@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -14,7 +13,7 @@ export class SpoonacularService {
 
   mockAPIstring = "http://www.amock.io/api/phz1996/"
   spoonString = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/"
-  testingMode = false; //Keeping this true returns fake hardcoded API results,
+  testingMode = true; //Keeping this true returns fake API results from 'amock.io',
   // so we don't go over the requests-per-day quota.
 
   getRandomFact() {
