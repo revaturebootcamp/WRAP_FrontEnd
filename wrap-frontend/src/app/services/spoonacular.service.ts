@@ -7,8 +7,6 @@ import { environment } from '../../environments/environment';
 })
 export class SpoonacularService {
 
-  
-
   constructor(private http:HttpClient) {}
 
   mockAPIstring = "http://www.amock.io/api/phz1996/"
