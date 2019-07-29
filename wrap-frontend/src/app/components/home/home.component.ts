@@ -10,11 +10,11 @@ import { SpoonacularService } from 'src/app/services/spoonacular.service';
 export class HomeComponent implements OnInit {
 
   username = "(DefaultUsernameValue)"
+  
 
   constructor(private spoon:SpoonacularService) { }
 
   ngOnInit() {
-   this.getRandomFoodFact();
    this.getRecipeDataFromSearch("pasta");
    this.getRecipeInfoByID(1092215);
   }
@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
   getRecipeInfoByID(id){
     this.spoon.getRecipeInfoByID(id).subscribe(
       data => {
-        console.log(data);
+        console.log(data)
         console.log(data["id"]);
         console.log(data["title"]);
         console.log(data["instructions"]);

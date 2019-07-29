@@ -20,10 +20,7 @@
     "@angular/platform-browser-dynamic": "~8.1.0",
     "@angular/router": "~8.1.0",
     "bootstrap": "^4.3.1",
-<<<<<<< HEAD
-=======
     "bootstrap4": "0.0.1-security",
->>>>>>> 803a0bb9573ac4d59bd41d05d0e6b33bacb8a1c1
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
     "rxjs": "~6.4.0",

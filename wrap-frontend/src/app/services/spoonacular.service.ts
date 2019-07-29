@@ -7,8 +7,6 @@ import { environment } from '../../environments/environment';
 })
 export class SpoonacularService {
 
-  
-
   constructor(private http:HttpClient) {}
 
   mockAPIstring = "http://www.amock.io/api/phz1996/"
@@ -19,7 +17,7 @@ export class SpoonacularService {
   getRandomFact() {
 
     if (this.testingMode){
-      return this.http.get(this.mockAPIstring + "randomFact");
+      return this.http.get("https://my-json-server.typicode.com/paul-hernandez/gittest");
     } else {
       const headers = new HttpHeaders({'X-RapidAPI-Host':'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
       'X-RapidAPI-Key':environment.API_KEY});
@@ -32,7 +30,7 @@ export class SpoonacularService {
   getRecipeInfoByID(id){
 
     if (this.testingMode){
-      return this.http.get(this.mockAPIstring + "recipe");
+      return this.http.get("http://www.mocky.io/v2/5d3f52503300002b009d25bb");
     } else {
       const headers = new HttpHeaders({'X-RapidAPI-Host':'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
       'X-RapidAPI-Key':environment.API_KEY});
@@ -45,7 +43,7 @@ export class SpoonacularService {
 
   getRecipeSearchResults(searchTerm){
     if (this.testingMode){
-      return this.http.get(this.mockAPIstring + "searchPasta")
+      return this.http.get("http://www.mocky.io/v2/5d3f52ca3300006b009d25cc")
     } else {
       const headers = new HttpHeaders({'X-RapidAPI-Host':'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
       'X-RapidAPI-Key':environment.API_KEY});
