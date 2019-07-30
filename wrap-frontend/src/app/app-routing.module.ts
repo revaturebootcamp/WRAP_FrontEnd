@@ -6,12 +6,17 @@ import { IngredientsComponent } from './components/ingredients/ingredients.compo
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
   {
     path: "register",
     component: RegisterComponent
+  },
+  {
+    path: "home",
+    component: HomeComponent
   },
   {
     path: "ingredients",
