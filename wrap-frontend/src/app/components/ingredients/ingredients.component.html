@@ -2,17 +2,25 @@
     <h1>Now Viewing Your Ingredients List!</h1>
     <hr>
     <table>
-        <th></th>
-        <th>Ingredient</th>
-        <th>Quantity</th>
-        <th>Modified</th>
-        <th>Total</th>
-        <tr id="0">
-            <td><button (click)="changeRowColor('0')">Got it!</button></td>
-            <td>Blah</td>
-            <td>Bleh</td>
-            <td>Blih</td>
-            <td>Bloh</td>
-        </tr>
+        <thead>
+            <th></th>
+            <th>Ingredient</th>
+            <th>Quantity</th>
+            <th>Modified</th>
+            <th>Total</th>        
+        </thead>
+        <tbody *ngFor="let r of ingredients">
+            <tr id={{ingredientIdString(r.id)}}>
+                <td><button (click)="changeRowColor('0')">Got it!</button></td>
+                <td>{{r.name}}</td>
+                <td>{{r.amount}}</td>
+                <td>{{r.quantity}}</td>
+                <td>{{r.amount+r.quantity}}</td>
+                <!-- <td>Blah</td>
+                <td>Bleh</td>
+                <td>Blih</td>
+                <td>Bloh</td> -->
+            </tr>
+        </tbody>
     </table>
 </div>

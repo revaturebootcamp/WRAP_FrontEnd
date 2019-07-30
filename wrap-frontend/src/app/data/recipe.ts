@@ -1,4 +1,6 @@
-class Recipe {
+import { Ingredient } from "./ingredient";
+
+export class Recipe {
 
   tableId:number;
   id:number;
