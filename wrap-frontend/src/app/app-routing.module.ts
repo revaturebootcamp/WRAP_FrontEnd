@@ -7,6 +7,7 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { SearchComponent } from './components/search/search.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: "search",
     component: SearchComponent
+  },
+  {
+    path: "home",
+    component: HomeComponent
   }
 ];
 

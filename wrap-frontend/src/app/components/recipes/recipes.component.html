@@ -17,16 +17,13 @@
                             <table>
                             <tr>
                                 <th>
-                                    ID
-                                </th>
-                                <th>
-                                    Title
+                                    Name
                                 </th>
                                 <th>
                                     Instructions
                                 </th>
                                 <th>
-                                    Ready in Minutes
+                                    Preperation Time
                                 </th>
                                 <th>
                                     Servings
@@ -34,20 +31,17 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="text" size="10" name="id">
-                                </td>
-                                <td>
                                     <input type="text" name= "title">
                                 </td>
                                 <td>
-                                    <input type="text" size="100" name="instructions">
+                                    <textarea name="instructions" id="instructions" form="add" maxlength="250"></textarea>
                                 </td>
                                 <td>
-                                        <input type="text" name="readyInMinutes">
-                                    </td>
-                                    <td>
-                                            <input type="text" size="10" name="servings">
-                                        </td>
+                                    <input type="text" name="readyInMinutes">
+                                </td>
+                                <td>
+                                    <input type="text" size="10" name="servings">
+                                </td>
                             </tr>
                             </table>
                             <br>
@@ -102,19 +96,16 @@
                                         <table>
                                             <tr>
                                                 <th>
-                                                    Aisle
-                                                </th>
-                                                <th>
-                                                    ID
-                                                </th>
-                                                <th>
                                                     Name
                                                 </th>
                                                 <th>
-                                                   Name and Measurement
+                                                    Quantity
                                                 </th>
                                                 <th>
-                                                    Amount
+                                                    Aisle
+                                                </th>
+                                                <th>
+                                                   Amount
                                                 </th>
                                                 <th>
                                                     Unit
@@ -122,16 +113,13 @@
                                             </tr>
                                             <tr>
                                                     <td>
-                                                            <input type="text" size="10" name="aisle">
-                                                    </td>
-                                                    <td>
-                                                            <input type="text" size="10" name="id">
-                                                     </td>
-                                                     <td>
                                                             <input type="text" size="10" name="name">
                                                     </td>
                                                     <td>
-                                                            <input type="text" size="10" name="nameAndMeasurement">
+                                                            <input type="text" size="10" name="quantity">
+                                                     </td>
+                                                     <td>
+                                                            <input type="text" size="10" name="aisle">
                                                     </td>
                                                     <td>
                                                             <input type="text" size="10" name="amount">
@@ -149,4 +137,3 @@
                 </div>
     </body>
 </html>
-

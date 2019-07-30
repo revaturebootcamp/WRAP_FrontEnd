@@ -13,6 +13,7 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
+import { SpoonacularService } from './services/spoonacular.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { RecipesComponent } from './components/recipes/recipes.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ SpoonacularService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

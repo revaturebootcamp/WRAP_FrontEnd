@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SpoonacularService } from 'src/app/services/spoonacular.service';
+
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
@@ -11,7 +13,14 @@ export class RecipesComponent implements OnInit {
     this.visibility = !this.visibility;
   }
 
-  constructor() { }
+  recipes$;
+  constructor(private recipeService: SpoonacularService) {}
+
+  getRecipeInfoByID() {
+    this.recipes$ = this.recipeService.getRecipeInfoByID(2);
+    console.log(this.recipes$);
+  }
+
 
   ngOnInit() {
   }
