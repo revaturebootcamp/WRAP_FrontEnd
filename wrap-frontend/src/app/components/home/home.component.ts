@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SpoonacularService } from 'src/app/services/spoonacular.service';
+import { UserService } from 'src/app/services/user.service';
+import { Recipe } from 'src/app/data/recipe';
 
 
 @Component({
@@ -12,9 +14,10 @@ export class HomeComponent implements OnInit {
   username = "(DefaultUsernameValue)"
   
 
-  constructor(private spoon:SpoonacularService) { }
+  constructor(private spoon:SpoonacularService, private us:UserService) { }
 
   ngOnInit() {
+    console.log('what')
    this.getRecipeDataFromSearch("pasta");
    this.getRecipeInfoByID(1092215);
   }
@@ -67,6 +70,34 @@ export class HomeComponent implements OnInit {
         }
       }, error => {
         console.log("Failed to get recipe info by ID :(");
+    });
+  }
+
+  addRecipe(){
+    var recipe = new Recipe();
+    
+    recipe.id = 1092215;
+    recipe.quantity = 2;
+    recipe.isCurrent = true;
+    recipe.title = "Beans and Rice";
+    recipe.readyInMinutes = 35;
+    recipe.servings = 4;
+    recipe.testing();
+
+    this.us.addRecipe(recipe).subscribe(
+      data => {
+        console.log(data);  
+      }, error => {
+        console.log("Failed to add recipe for some reason :(");
+    });
+  }
+
+  getRecipes(){
+    this.us.getRecipes().subscribe(
+      data => {
+        console.log(data);  
+      }, error => {
+        console.log("Failed to get all of this user's recipes :(");
     });
   }
 

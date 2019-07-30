@@ -16,6 +16,10 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
+    path: "home",
+    component: HomeComponent
+  },
+  {
     path: "ingredients",
     component: IngredientsComponent
   },
