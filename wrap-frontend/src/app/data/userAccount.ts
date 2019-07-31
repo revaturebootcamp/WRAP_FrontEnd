@@ -1,6 +1,6 @@
 
-class UserAccount {
-    
+export class UserAccount {
+
     id:number;
     username:string;
     password:string;
