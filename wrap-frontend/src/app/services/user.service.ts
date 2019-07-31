@@ -7,7 +7,7 @@ import { Recipe } from '../data/recipe';
 })
 export class UserService {
 
-  private static urlPrefix = "http://localhost:8080/useraccount"
+  private static urlPrefix = "http://3.15.23.130:8085/WRAP/useraccount"
   private static options = { headers: new HttpHeaders().set('Content-Type', 'application/json') , withCredentials: true };
 
   constructor(private http: HttpClient) { }
