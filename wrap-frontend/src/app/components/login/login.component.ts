@@ -5,6 +5,7 @@ import { UserAccount } from 'src/app/data/userAccount';
 import { Recipe } from 'src/app/data/recipe';
 import { Ingredient } from 'src/app/data/ingredient';
 import { SpoonacularService } from 'src/app/services/spoonacular.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { SpoonacularService } from 'src/app/services/spoonacular.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private us:UserService, private cs: CurrentSession, private ss: SpoonacularService) { }
+  constructor(private us:UserService, private cs: CurrentSession, private ss: SpoonacularService, private router: Router) { }
 
   ngOnInit() {
 
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
     this.us.login(this.username,this.password).subscribe(
       data => {
         if (data) {
-          alert("Succesful Log In, replace this alert with appropriate action");
+          this.router.navigate(['/']);
           //var user = new UserAccount();
           console.log(this.cs.user)
           var user = new UserAccount();
@@ -35,7 +36,8 @@ export class LoginComponent implements OnInit {
           console.log(this.cs.user)
           this.getRecipes()         
         } else {
-          alert("Unsuccesful login attempt, replace this alert with desired action here")
+          alert("Unsuccesful login attempt, please try again.")
+          window.location.reload();
         }
       }, error => {
         alert("Error has occured while logging in.");

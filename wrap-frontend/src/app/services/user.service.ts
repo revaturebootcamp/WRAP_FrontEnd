@@ -1,16 +1,22 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 import { Recipe } from '../data/recipe';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UserService 
+{
 
   private static urlPrefix = "http://3.15.23.130:8085/WRAP/useraccount"
+  constructor(private http: HttpClient, private router:Router) 
+  {
+    
+  }
   private static options = { headers: new HttpHeaders().set('Content-Type', 'application/json') , withCredentials: true };
 
-  constructor(private http: HttpClient) { }
 
   login(usernameIn: string, passwordIn: string)
   {
@@ -32,4 +38,39 @@ export class UserService {
     return this.http.get<Object[]>(UserService.urlPrefix + "/recipe/find/all", UserService.options);
   }
 
+  verifyLogin()
+  {
+    this.http.get<boolean>(UserService.urlPrefix + "/verifyAccount", UserService.options).subscribe
+    (
+      data =>
+      {
+        if(data)
+        {
+        }
+        else
+        {
+          if(this.router.url.indexOf('/register') > -1)
+          {
+            this.router.navigate(['/register']);
+          }
+          else 
+          {
+            this.router.navigate(['login']);
+          }
+        }
+      },
+      error =>
+      {
+        if(this.router.url.indexOf('/register') > -1)
+          {
+            this.router.navigate(['/register']);
+          }
+          else 
+          {
+            this.router.navigate(['login']);
+          }
+      }
+  );
+  }
 }
+
