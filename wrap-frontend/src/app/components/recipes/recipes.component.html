@@ -20,16 +20,16 @@
                         </tr>
                         <tr>
                             <td>
-                                <input type="text" name= "title">
+                                <input type="text" name= "title" id = "title">
                             </td>
                             <td>
                                 <textarea name="instructions" id="instructions" form="add" maxlength="250"></textarea>
                             </td>
                             <td>
-                                <input type="text" name="readyInMinutes">
+                                <input type="text" name="readyInMinutes" id = "readyInMinutes">
                             </td>
                             <td>
-                                <input type="text" size="10" name="servings">
+                                <input type="text" size="10" name="servings" id="servings">
                             </td>
                         </tr>
                         </table>
@@ -60,16 +60,16 @@
                                 </tr>
                                 <tr>
                                         <td>
-                                                <input type="text" size="10" name="servingSize">
+                                                <input type="text" size="10" name="servingSize" id="servingSize">
                                         </td>
                                         <td>
-                                                <input type="text" size="10" name="calories">
+                                                <input type="text" size="10" name="calories" id="calories">
                                             </td>
                                             <td>
-                                                <input type="text" size="10" name="price">
+                                                <input type="text" size="10" name="price" id="price">
                                         </td>
                                         <td>
-                                                <input type="text" size="10" name="cookTime">
+                                                <input type="text" size="10" name="cookTime" id="cookTime">
                                             </td>
                                 </tr>
                             </table>
@@ -82,13 +82,10 @@
                                 cursor: pointer;
                                 text-align: center">Ingredients</button>
                                 <div>
-                                    <table>
+                                    <table *ngFor='let i of recipe.ingredients'>
                                         <tr>
                                             <th>
                                                 Name
-                                            </th>
-                                            <th>
-                                                Quantity
                                             </th>
                                             <th>
                                                 Aisle
@@ -99,22 +96,29 @@
                                             <th>
                                                 Unit
                                             </th>
+                                            <th>
+                                                Quantity
+                                            </th>
                                         </tr>
                                         <tr>
                                                 <td>
-                                                        <input type="text" size="10" name="name">
+                                                        <!-- <input type="text" size="10" name="name" id="name"> -->
+                                                        {{ i.name }}
                                                 </td>
                                                 <td>
-                                                        <input type="text" size="10" name="quantity">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" size="10" name="aisle">
+                                                        <!-- <input type="text" size="10" name="aisle" id="aisle"> -->
+                                                        {{ i.aisle }}
                                                 </td>
                                                 <td>
-                                                        <input type="text" size="10" name="amount">
+                                                        <!-- <input type="text" size="10" name="amount" id="amount"> -->
+                                                        {{ i.amount }}
                                                 </td>
                                                 <td>
-                                                        <input type="text" size="10" name="unit">
+                                                        <!-- <input type="text" size="10" name="unit" id="unit"> -->
+                                                        {{ i.unit }}
+                                                </td>
+                                                <td>
+                                                    <input type="text" size="10" name="quantity" id="quantity">
                                                 </td>
                                         </tr>
                                     </table>

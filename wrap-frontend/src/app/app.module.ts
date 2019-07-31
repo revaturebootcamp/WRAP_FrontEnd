@@ -14,6 +14,8 @@ import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { SpoonacularService } from './services/spoonacular.service';
+import { UserService } from './services/user.service';
+import { CurrentSession } from './data/CurrentSession';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ import { SpoonacularService } from './services/spoonacular.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [ SpoonacularService ],
+  providers: [UserService, CurrentSession, SpoonacularService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
