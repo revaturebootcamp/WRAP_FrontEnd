@@ -13,12 +13,12 @@ export class IngredientsComponent implements OnInit {
 
   private ingredients : Ingredient[] = [];
 
-  constructor() { }
+  constructor(private curSession : CurrentSession) { }
 
   ngOnInit() {
     let ingredientMap = new Map ();
 
-    for (let r of CurrentSession.currentRecipes) {
+    for (let r of this.curSession.currentRecipes) {
       for (let i of r.ingredients) {
         
 
