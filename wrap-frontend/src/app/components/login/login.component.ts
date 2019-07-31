@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
           //var user = new UserAccount();
           console.log(this.cs.user)
           var user = new UserAccount();
-          user.username = "hello"
+          user.username = this.username;
           this.cs.user = user;
           console.log(this.cs.user)
           this.getRecipes()         
