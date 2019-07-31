@@ -1,4 +1,4 @@
-
+import { Recipe } from './recipe';
 
 export class CurrentSession {
     public static user : UserAccount = null;
