@@ -1,4 +1,4 @@
-class Ingredient {
+export class Ingredient {
     id:number;
     quantity:number;
     name:string;

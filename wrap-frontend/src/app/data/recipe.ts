@@ -1,9 +1,11 @@
+import { Ingredient } from './ingredient';
+
 export class Recipe {
 
   tableId:number;
   id:number;
   ownerId:number;
-  ingredients:Ingredient[] = [];
+  ingredients:Ingredient[];
   quantity:number;
   isCurrent:boolean = false;
   isFavorite:boolean = false;
@@ -15,9 +17,6 @@ export class Recipe {
   instructions:string;
   servings:number;
 
-  testing(){
-    console.log("howdy");
-  }
 
 
 }

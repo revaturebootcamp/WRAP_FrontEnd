@@ -11,7 +11,7 @@ export class SpoonacularService {
 
   mockAPIstring = "http://www.amock.io/api/phz1996/"
   spoonString = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/"
-  testingMode = true; //Keeping this true returns fake API results from 'amock.io',
+  testingMode = false; //Keeping this true returns fake API results from 'amock.io',
   // so we don't go over the requests-per-day quota.
 
   getRandomFact() {

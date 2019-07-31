@@ -29,7 +29,7 @@ export class UserService {
 
   getRecipes()
   {
-    return this.http.get<boolean>(UserService.urlPrefix + "/recipe/find/all", UserService.options);
+    return this.http.get<Object[]>(UserService.urlPrefix + "/recipe/find/all", UserService.options);
   }
 
 }
