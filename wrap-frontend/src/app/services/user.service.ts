@@ -10,7 +10,7 @@ import { Recipe } from '../data/recipe';
 export class UserService 
 {
 
-  private static urlPrefix = "http://localhost:8080/useraccount"
+  private static urlPrefix = "http://3.15.23.130:8085/WRAP/useraccount"
   constructor(private http: HttpClient, private router:Router) 
   {
     
@@ -40,7 +40,7 @@ export class UserService
 
   verifyLogin()
   {
-    this.http.get<boolean>(UserService.urlPrefix + "/verifyAccount").subscribe
+    this.http.get<boolean>(UserService.urlPrefix + "/verifyAccount", UserService.options).subscribe
     (
       data =>
       {
