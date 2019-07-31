@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     this.us.login(this.username,this.password).subscribe(
       data => {
         if (data) {
-          this.router.navigate(['/']);
+          this.router.navigate(['home']);
           //var user = new UserAccount();
           console.log(this.cs.user)
           var user = new UserAccount();
@@ -44,6 +44,11 @@ export class LoginComponent implements OnInit {
     });
 
     console.log(this.cs.user)
+  }
+
+  navigateToRegisterPage()
+  {
+    this.router.navigate(['register']);
   }
 
   getRecipes(){
