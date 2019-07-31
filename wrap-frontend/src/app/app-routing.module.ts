@@ -6,6 +6,7 @@ import { IngredientsComponent } from './components/ingredients/ingredients.compo
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
+import { UserService } from './services/user.service';
 
 
 const routes: Routes = [
@@ -35,4 +36,10 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule 
+{
+  constructor(private userService:UserService)
+  {
+    userService.verifyLogin();
+  }
+}
