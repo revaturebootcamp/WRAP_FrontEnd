@@ -4,15 +4,62 @@
     </head>
     <body>
             <div class="osection">
-                    <button class="btn btn-danger" (click)="toggleVisibility()">Recipe</button>
+                    <button class="block" (click)="toggleVisibility()" style = "display: block;
+                    width: 100%;
+                    border: none;
+                    background-color: #fcb603;
+                    padding: 14px 28px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    text-align: center">Recipe of the Day!</button>
                     <div [hidden]="visibility">
                         <form>
-                            <input type="text" name="recipe" id="recipe">
-                            <input type="number" name="quantity" id="quantity">
-                            <input type="checkbox" name="favorite" id="favorite">
-
-                            <button class="btn btn-danger" (click)="toggleVisibility()">Nutrition</button>
-                            <div [hidden]="visibility">
+                            <table>
+                            <tr>
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Title
+                                </th>
+                                <th>
+                                    Instructions
+                                </th>
+                                <th>
+                                    Ready in Minutes
+                                </th>
+                                <th>
+                                    Servings
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" size="10" name="id">
+                                </td>
+                                <td>
+                                    <input type="text" name= "title">
+                                </td>
+                                <td>
+                                    <input type="text" size="100" name="instructions">
+                                </td>
+                                <td>
+                                        <input type="text" name="readyInMinutes">
+                                    </td>
+                                    <td>
+                                            <input type="text" size="10" name="servings">
+                                        </td>
+                            </tr>
+                            </table>
+                            <br>
+                            <button class="block" style = "display: block;
+                            width: 100%;
+                            border: none;
+                            background-color: #fcb603;
+                            padding: 14px 28px;
+                            font-size: 16px;
+                            cursor: pointer;
+                            text-align: center">Nutrition and Information</button>
+                            <div>
                                 <table>
                                     <tr>
                                         <th>
@@ -28,20 +75,70 @@
                                             Cook Time
                                         </th>
                                     </tr>
+                                    <tr>
+                                            <td>
+                                                    <input type="text" size="10" name="servingSize">
+                                            </td>
+                                            <td>
+                                                    <input type="text" size="10" name="calories">
+                                             </td>
+                                             <td>
+                                                    <input type="text" size="10" name="price">
+                                            </td>
+                                            <td>
+                                                    <input type="text" size="10" name="cookTime">
+                                                </td>
+                                    </tr>
                                 </table>
-                                    <button class="btn btn-danger" (click)="toggleVisibility()">Ingredients</button>
-                                    <div [hidden]="visibility">
+                                    <button class="block" style = "display: block;
+                                    width: 100%;
+                                    border: none;
+                                    background-color: #fcb603;
+                                    padding: 14px 28px;
+                                    font-size: 16px;
+                                    cursor: pointer;
+                                    text-align: center">Ingredients</button>
+                                    <div>
                                         <table>
                                             <tr>
+                                                <th>
+                                                    Aisle
+                                                </th>
+                                                <th>
+                                                    ID
+                                                </th>
                                                 <th>
                                                     Name
                                                 </th>
                                                 <th>
-                                                    Mod
+                                                   Name and Measurement
                                                 </th>
                                                 <th>
-                                                    Quantity
+                                                    Amount
                                                 </th>
+                                                <th>
+                                                    Unit
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                    <td>
+                                                            <input type="text" size="10" name="aisle">
+                                                    </td>
+                                                    <td>
+                                                            <input type="text" size="10" name="id">
+                                                     </td>
+                                                     <td>
+                                                            <input type="text" size="10" name="name">
+                                                    </td>
+                                                    <td>
+                                                            <input type="text" size="10" name="nameAndMeasurement">
+                                                    </td>
+                                                    <td>
+                                                            <input type="text" size="10" name="amount">
+                                                    </td>
+                                                    <td>
+                                                            <input type="text" size="10" name="unit">
+                                                    </td>
                                             </tr>
                                         </table>
                                     </div>

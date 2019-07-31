@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SpoonacularService } from 'src/app/services/spoonacular.service';
+import { UserService } from 'src/app/services/user.service';
+import { Recipe } from 'src/app/data/recipe';
+import { Ingredient } from 'src/app/data/ingredient';
 
 
 @Component({
@@ -12,10 +15,11 @@ export class HomeComponent implements OnInit {
   username = "(DefaultUsernameValue)"
   
 
-  constructor(private spoon:SpoonacularService) { }
+  constructor(private spoon:SpoonacularService, private us:UserService) { }
 
   ngOnInit() {
-   this.getRecipeDataFromSearch("pasta");
+    console.log('what')
+   //this.getRecipeDataFromSearch("pasta");
    this.getRecipeInfoByID(1092215);
   }
 
@@ -47,26 +51,61 @@ export class HomeComponent implements OnInit {
   }
 
   getRecipeInfoByID(id){
+    var recipe = new Recipe()
     this.spoon.getRecipeInfoByID(id).subscribe(
       data => {
-        console.log(data)
-        console.log(data["id"]);
-        console.log(data["title"]);
-        console.log(data["instructions"]);
-        console.log(data["readyInMinutes"]);
-        console.log(data["servings"]);
-        let ingredients = data["extendedIngredients"]
+        recipe.id = data["id"];
+        recipe.ingredients = [];
+        recipe.quantity = data["id"]
+        recipe.isCurrent = true;
+        recipe.isFavorite = false;
+        recipe.isHistory = false;
+        recipe.title = data["title"]
+        recipe.readyInMinutes = data["readyInMinutes"]
+        recipe.instructions = data["instructions"]
+        recipe.servings = data["servings"]
+        let ingredients = data["extendedIngredients"]        
         for (let index in ingredients) {
-          console.log("INGREDIENT #" + index)
-          console.log("Aisle: " + ingredients[index].aisle)
-          console.log("id: " + ingredients[index].id)
-          console.log("name: " + ingredients[index].name)
-          console.log("nameAndMeasurement: " + ingredients[index].original) 
-          console.log("amount: " + ingredients[index].amount)
-          console.log("unit: " + ingredients[index].unit)
+          var ing = new Ingredient();
+          ing.id = ingredients[index].id;
+          ing.quantity = 1;
+          ing.name = ingredients[index].name;
+          ing.aisle = ingredients[index].aisle;
+          ing.amount = ingredients[index].amount;
+          ing.unit = ingredients[index].unit
+          recipe.ingredients.push(ing);
         }
+        console.log(recipe)
       }, error => {
         console.log("Failed to get recipe info by ID :(");
+    });
+    console.log(recipe);
+  }
+
+  addRecipe(){
+    var recipe = new Recipe();
+    
+    recipe.id = 1092215;
+    recipe.quantity = 2;
+    recipe.isCurrent = true;
+    recipe.title = "Beans and Rice";
+    recipe.readyInMinutes = 35;
+    recipe.servings = 4;
+
+    this.us.addRecipe(recipe).subscribe(
+      data => {
+        console.log(data);  
+      }, error => {
+        console.log("Failed to add recipe for some reason :(");
+    });
+  }
+
+  getRecipes(){
+    this.us.getRecipes().subscribe(
+      data => {
+        console.log(data);  
+      }, error => {
+        console.log("Failed to get all of this user's recipes :(");
     });
   }
 

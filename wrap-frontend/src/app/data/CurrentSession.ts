@@ -1,11 +1,15 @@
 import { Recipe } from './recipe';
+import { Injectable } from '@angular/core';
+import { UserAccount } from './userAccount';
 
-
+@Injectable({
+    providedIn: 'root'
+  })
 export class CurrentSession {
-    public static user : UserAccount = null;
-    public static currentRecipes : Recipe[] = [];
-    public static favoriteRecipes : Recipe[] = [];
-    public static historyRecipes : Recipe[] = [];
+    public user: UserAccount = null;
+    public currentRecipes : Recipe[] = [];
+    public favoriteRecipes : Recipe[] = [];
+    public historyRecipes : Recipe[] = [];
 
-
+    constructor() { }
 }

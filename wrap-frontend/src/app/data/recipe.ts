@@ -1,4 +1,4 @@
-import { Ingredient } from "./ingredient";
+import { Ingredient } from './ingredient';
 
 export class Recipe {
 
@@ -7,15 +7,16 @@ export class Recipe {
   ownerId:number;
   ingredients:Ingredient[];
   quantity:number;
-  isCurrent:boolean;
-  isFavorite:boolean;
-  isHistory:boolean;
+  isCurrent:boolean = false;
+  isFavorite:boolean = false;
+  isHistory:boolean = false;
+
 
   title:string;
   readyInMinutes:number;
   instructions:string;
   servings:number;
-  
+
 
 
 }
