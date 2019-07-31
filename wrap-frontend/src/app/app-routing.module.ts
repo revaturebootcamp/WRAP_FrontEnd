@@ -6,8 +6,8 @@ import { IngredientsComponent } from './components/ingredients/ingredients.compo
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
-import { SearchComponent } from './components/search/search.component';
 import { HomeComponent } from './components/home/home.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 const routes: Routes = [
