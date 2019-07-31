@@ -6,13 +6,22 @@ import { IngredientsComponent } from './components/ingredients/ingredients.compo
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
+<<<<<<< HEAD
 import { UserService } from './services/user.service';
+=======
+import { HomeComponent } from './components/home/home.component';
+import { SearchComponent } from './components/search/search.component';
+>>>>>>> 1acf3ae85326e0b75116b7019734b199ad304ad1
 
 
 const routes: Routes = [
   {
     path: "register",
     component: RegisterComponent
+  },
+  {
+    path: "home",
+    component: HomeComponent
   },
   {
     path: "ingredients",
@@ -29,6 +38,10 @@ const routes: Routes = [
   {
     path: "recipes",
     component: RecipesComponent
+  },
+  {
+    path: "search",
+    component: SearchComponent
   }
 ];
 

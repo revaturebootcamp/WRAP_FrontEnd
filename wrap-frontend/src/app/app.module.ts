@@ -13,6 +13,8 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
+import { UserService } from './services/user.service';
+import { CurrentSession } from './data/CurrentSession';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { RecipesComponent } from './components/recipes/recipes.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [UserService, CurrentSession],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

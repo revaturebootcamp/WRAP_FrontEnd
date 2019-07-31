@@ -1,12 +1,27 @@
 <html>
-<body style="background-color:cornsilk">
-   <div class="wrap">
-      <div class="search">
-         <input type="text" class="searchTerm" placeholder="What are you looking for?">
-         <button type="submit" class="searchButton">
+      <br><br><br>
+      <div align ="center" class="form-box">
+         <input [(ngModel)]="searchTerm" type="text" class="search-field" size = "30" placeholder="What are you looking for?">
+         <button (click)="search(this.searchTerm)" type="submit">
            <i class="fa fa-search"></i>
         </button>
+        <br><br>
+       <div id="accordion" >
+         <div class="card" *ngFor="let result of recipeSearchResults; index as i;">
+           <div class="card-header">
+             <a class="card-link" data-toggle="collapse" [href]="'#collapse'+i">
+               {{result.title}}
+             </a>
+           </div>
+           <div [id]="'collapse'+i" class="collapse" data-parent="#accordion">
+             <div class="card-body">
+               Ready to eat in {{result.ready}} minutes.
+               <button (click)="addRecipe(result.id)" class="btn btn-success">Add</button>
+             </div>
+           </div>
+         </div>
+       
+       </div>
       </div>
-   </div>
-</body>
+      
 </html>

@@ -34,15 +34,14 @@ user =
 
     if(password1 == password2)
     {
-      alert('Passwords match');
       this.user.password = password1;
-      alert('You entered ' + this.user.username + ' as your username!');
-      this.userService.login(this.user.username, this.user.password).subscribe
+      this.userService.addUser(this.user.username, this.user.password).subscribe
       (
         data =>
         {
           if(data)
           {
+            alert("Success! Redirecting you to the login page...");
             this.router.navigate(['login']);
           }
           else
