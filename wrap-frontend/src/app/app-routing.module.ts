@@ -39,6 +39,19 @@ const routes: Routes = [
   {
     path: "search",
     component: SearchComponent
+  },
+  {
+    path : "reciept",
+    component: LoginComponent
+  },
+  {
+    path: "",
+    component: LoginComponent
+  },
+  {
+    path: "**",
+    redirectTo: "home",
+    pathMatch: "full"
   }
 ];
 

@@ -47,6 +47,11 @@ export class LoginComponent implements OnInit {
     console.log(this.cs.user)
   }
 
+  navigateToRegisterPage()
+  {
+    this.router.navigate(['register']);
+  }
+
   getRecipes(){
     this.us.getRecipes().subscribe(
       data => {
