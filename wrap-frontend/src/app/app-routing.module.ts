@@ -9,6 +9,7 @@ import { UserService } from './services/user.service';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { RecipewidgetComponent } from './components/recipewidget/recipewidget.component';
 
 
 const routes: Routes = [
@@ -34,7 +35,7 @@ const routes: Routes = [
   },
   {
     path: "recipes",
-    component: RecipesComponent
+    component: RecipewidgetComponent
   },
   {
     path: "search",

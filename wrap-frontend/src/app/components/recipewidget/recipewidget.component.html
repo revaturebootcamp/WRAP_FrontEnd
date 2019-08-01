@@ -1,0 +1,128 @@
+<button (click)="refresh()" >Refresh</button>
+<div *ngFor="let r of recipes;" class="recipeComponent" ng-app >
+        
+    <button class="block" id="recipeInfo" (click)="toggleVisibility(); getRecipeInfoByID(id)">Recipe</button>
+    <div [hidden]="visibility">
+        <form>
+            <table >
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Instructions
+                </th>
+                <th>
+                    Preperation Time
+                </th>
+                <th>
+                    Servings
+                </th>
+            </tr>
+            <tr>
+                <td>
+                     <p>{{r.title}}</p>
+                </td>
+                
+                <td>
+                     <p>{{r.instructions}}</p>
+                </td>
+                <td>
+                    <p>{{r.readyInMinutes}}</p>
+                </td>
+                <td>
+                    <p>{{r.servings}}</p>
+                </td>
+            </tr>
+            </table>
+            <br>
+            <button class="block" style = "display: block;
+            width: 690px;
+            border: none;
+            background-color: #ffe092;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center">Nutrition and Information</button>
+            <div>
+                <table>
+                    <tr>
+                        <th>
+                            Serving Size
+                        </th>
+                        <th>
+                            Calories
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            Cook Time
+                        </th>
+                    </tr>
+                    <tr>
+                            <td>
+                                    <input type="text" size="10" name="servingSize" id="servingSize">
+                            </td>
+                            <td>
+                                    <input type="text" size="10" name="calories" id="calories">
+                                </td>
+                                <td>
+                                    <input type="text" size="10" name="price" id="price">
+                            </td>
+                            <td>
+                                    <input type="text" size="10" name="cookTime" id="cookTime">
+                                </td>
+                    </tr>
+                </table>
+                    <button class="block" style = "display: block;
+                    width: 690px;
+                    border: none;
+                    background-color: #ffe092;
+                    padding: 14px 28px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    text-align: center">Ingredients</button>
+                    <div>
+                        <table > <!--*ngFor='let i of recipe.ingredients'-->
+                            <tr>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Aisle
+                                </th>
+                                <th>
+                                    Amount
+                                </th>
+                                <th>
+                                    Unit
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                            </tr>
+                            <tr *ngFor="let i of r.ingredients;">
+                                    <td>
+                                        <p>{{i.name}}</p>
+                                            <!-- {{ i.name }} -->
+                                    </td>
+                                    <td>
+                                        <p>{{i.aisle}}</p>
+                                    </td>
+                                    <td>
+                                        <p>{{i.amount}}</p>
+                                    </td>
+                                    <td>
+                                        <p>{{i.unit}}</p>
+                                    </td>
+                                    <td>
+                                        <input type="text" size="10" name="quantity" id="quantity">
+                                    </td>
+                            </tr>
+                        </table>
+                    </div>
+            </div>
+
+        </form>
+    </div>
