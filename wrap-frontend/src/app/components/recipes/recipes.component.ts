@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { SpoonacularService } from 'src/app/services/spoonacular.service';
+import { UserService } from 'src/app/services/user.service';
+import { Recipe } from 'src/app/data/recipe';
+import { Ingredient } from 'src/app/data/ingredient';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-recipes',
@@ -7,14 +13,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipesComponent implements OnInit {
 
-
-  visibility = true;
-  toggleVisibility(){
-    this.visibility = !this.visibility;
-  }
-
-  constructor() { }
-
+  // constructor (public recipe : Recipe) {}
   ngOnInit() {
   }
 

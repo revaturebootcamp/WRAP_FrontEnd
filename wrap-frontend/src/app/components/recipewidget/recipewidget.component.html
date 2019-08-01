@@ -1,7 +1,6 @@
-<button (click)="refresh()" >Refresh</button>
-<div *ngFor="let r of recipes;" class="recipeComponent" ng-app >
+<div *ngFor="let r of recipes;" class="recipeComponent">
         
-    <button class="block" id="recipeInfo" (click)="toggleVisibility(); getRecipeInfoByID(id)">Recipe</button>
+    <button class="block" id="recipeInfo" (click)="toggleVisibility(); getRecipeInfoByID(id)">{{r.title}}</button>
     <div [hidden]="visibility">
         <form>
             <table >
@@ -36,45 +35,7 @@
             </tr>
             </table>
             <br>
-            <button class="block" style = "display: block;
-            width: 690px;
-            border: none;
-            background-color: #ffe092;
-            padding: 14px 28px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center">Nutrition and Information</button>
             <div>
-                <table>
-                    <tr>
-                        <th>
-                            Serving Size
-                        </th>
-                        <th>
-                            Calories
-                        </th>
-                        <th>
-                            Price
-                        </th>
-                        <th>
-                            Cook Time
-                        </th>
-                    </tr>
-                    <tr>
-                            <td>
-                                    <input type="text" size="10" name="servingSize" id="servingSize">
-                            </td>
-                            <td>
-                                    <input type="text" size="10" name="calories" id="calories">
-                                </td>
-                                <td>
-                                    <input type="text" size="10" name="price" id="price">
-                            </td>
-                            <td>
-                                    <input type="text" size="10" name="cookTime" id="cookTime">
-                                </td>
-                    </tr>
-                </table>
                     <button class="block" style = "display: block;
                     width: 690px;
                     border: none;

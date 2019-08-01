@@ -1,0 +1,19 @@
+.recipeComponent
+{
+    border:2px inset #fcb603;
+    padding: .5%;
+    border-width:10px; 
+    margin-right: 800px;
+}
+
+button
+{
+    display: block;
+    width: 690px;
+    border:5px ridge #ffe092;
+    background-color: #fcb603;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}

@@ -16,7 +16,7 @@
            <div [id]="'collapse'+i" class="collapse" data-parent="#accordion">
              <div class="card-body">
                Ready to eat in {{result.ready}} minutes.
-               <button (click)="addRecipe(result.id)" class="btn btn-success">Add</button>
+               <button (click)="addRecipe(result.id); navigateToRecipesPage()" class="btn btn-success">Add</button>
              </div>
            </div>
          </div>
