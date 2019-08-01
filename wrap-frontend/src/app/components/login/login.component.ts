@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
           user.username = this.username;
           this.cs.user = user;
           console.log(this.cs.user)
-          this.getRecipes()         
+          this.getRecipes()   
+          this.cs.isUserLoggedIn.next(true);      
         } else {
           alert("Unsuccesful login attempt, please try again.")
           window.location.reload();
@@ -54,10 +55,8 @@ export class LoginComponent implements OnInit {
   getRecipes(){
     this.us.getRecipes().subscribe(
       data => {
-        console.log(data);
         for (let i in data){
-          console.log(data[0]["id"]);
-          this.populateRecipeInfo(data[0]["id"]);
+          this.populateRecipeInfo(data[i]["id"]);
         }  
       }, error => {
         console.log("Failed to get all of this user's recipes :(");

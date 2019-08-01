@@ -3,12 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 // import { registerLocaleData } from '@angular/common';
 import { RegisterComponent } from './components/register/register.component';
 import { IngredientsComponent } from './components/ingredients/ingredients.component';
-import { FavoritesComponent } from './components/favorites/favorites.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { UserService } from './services/user.service';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import { RecipewidgetComponent } from './components/recipewidget/recipewidget.component';
 
 
 const routes: Routes = [
@@ -34,7 +35,7 @@ const routes: Routes = [
   },
   {
     path: "recipes",
-    component: RecipesComponent
+    component: RecipewidgetComponent
   },
   {
     path: "search",
