@@ -6,33 +6,33 @@
     </a>
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link"  routerLinkActive="active" *ngIf="loggedIn" routerLink="search">Search
+        <a id="pageLink" class="nav-link"  routerLinkActive="active" *ngIf="loggedIn" routerLink="search">Search
             <i class="fas fa-search"></i>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" *ngIf="loggedIn" routerLink="recipes">Recipes
+        <a id="pageLink" class="nav-link" routerLinkActive="active" *ngIf="loggedIn" routerLink="recipes">Recipes
             <i class="fas fa-pizza-slice"></i>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" *ngIf="loggedIn" routerLink="ingredients">Ingredients
+        <a id="pageLink" class="nav-link" routerLinkActive="active" *ngIf="loggedIn" routerLink="ingredients">Ingredients
             <i class="fas fa-carrot"></i>
         </a>
             
       </li>
       <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" *ngIf="loggedIn" routerLink="nutrition">Nutrition
+            <a id="pageLink" class="nav-link" routerLinkActive="active" *ngIf="loggedIn" routerLink="nutrition">Nutrition
                 <i class="fab fa-nutritionix"></i>
             </a>
       </li>
     <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" *ngIf="loggedIn" routerLink="favorites">Favorites
+        <a id="pageLink" class="nav-link" routerLinkActive="active" *ngIf="loggedIn" routerLink="favorites">Favorites
 
             <i class="fas fa-star"></i>
         </a>
     </li>
-    <li class="nav-item" *ngIf="loggedIn" (click)="logout()">
+    <li id="logOut" class="nav-item" *ngIf="loggedIn" (click)="logout()">
       <a class="nav-link" routerLinkActive="active" routerLink="login">Logout
           
       </a>
