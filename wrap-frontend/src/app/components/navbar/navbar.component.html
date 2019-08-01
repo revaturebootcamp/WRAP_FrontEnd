@@ -1,37 +1,41 @@
 <nav class="navbar navbar-expand-sm bg-light">
-
-    <a class="navbar-brand" style="color:rgb(207, 107, 13); font-size:50px; " href="home">
+    <a class="navbar-brand" style="color:rgb(207, 107, 13); font-size:50px; " >
         <i class="fas fa-utensils"></i>
         WRAP
         <i class="fas fa-smile-wink"></i>
     </a>
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="/search">Search
+        <a class="nav-link"  routerLinkActive="active" *ngIf="loggedIn" routerLink="search">Search
             <i class="fas fa-search"></i>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/recipes">Recipes
+        <a class="nav-link" routerLinkActive="active" *ngIf="loggedIn" routerLink="recipes">Recipes
             <i class="fas fa-pizza-slice"></i>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ingredients">Ingredients
+        <a class="nav-link" routerLinkActive="active" *ngIf="loggedIn" routerLink="ingredients">Ingredients
             <i class="fas fa-carrot"></i>
         </a>
             
       </li>
       <li class="nav-item">
-            <a class="nav-link" href="/nutrition">Nutrition
+            <a class="nav-link" routerLinkActive="active" *ngIf="loggedIn" routerLink="nutrition">Nutrition
                 <i class="fab fa-nutritionix"></i>
             </a>
       </li>
     <li class="nav-item">
-        <a class="nav-link" href="/favorites">Favorites
+        <a class="nav-link" routerLinkActive="active" *ngIf="loggedIn" routerLink="favorites">Favorites
 
             <i class="fas fa-star"></i>
         </a>
+    </li>
+    <li class="nav-item" *ngIf="loggedIn" (click)="logout()">
+      <a class="nav-link" routerLinkActive="active" routerLink="login">Logout
+          
+      </a>
     </li>
     </ul>
   
