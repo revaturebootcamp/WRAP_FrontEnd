@@ -15,6 +15,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { UserService } from './services/user.service';
 import { CurrentSession } from './data/CurrentSession';
+import { RecipewidgetComponent } from './components/recipewidget/recipewidget.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CurrentSession } from './data/CurrentSession';
     FavoritesComponent,
     SearchComponent,
     LoginComponent,
-    RecipesComponent
+    RecipesComponent,
+    RecipewidgetComponent
   ],
   imports: [
     BrowserModule,
