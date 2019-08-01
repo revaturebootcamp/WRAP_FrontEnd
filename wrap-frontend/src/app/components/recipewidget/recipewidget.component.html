@@ -1,8 +1,10 @@
-<div class="recipeComponent" ng-app>
+<button (click)="refresh()" >Refresh</button>
+<div *ngFor="let r of recipes;" class="recipeComponent" ng-app >
+        
     <button class="block" id="recipeInfo" (click)="toggleVisibility(); getRecipeInfoByID(id)">Recipe</button>
     <div [hidden]="visibility">
         <form>
-            <table ng-init="recipe = [{title:'tossed salad',instructions:'toss them',readyInMinutes:'32',servings:'2'}];">
+            <table >
             <tr>
                 <th>
                     Name
@@ -19,16 +21,17 @@
             </tr>
             <tr>
                 <td>
-                    <input type="text" name= "title" id = "title" ng-model="recipe.title">
+                     <p>{{r.title}}</p>
+                </td>
+                
+                <td>
+                     <p>{{r.instructions}}</p>
                 </td>
                 <td>
-                    <textarea name="instructions" id="instructions" form="add" maxlength="250" ng-model="recipe.instructions"></textarea>
+                    <p>{{r.readyInMinutes}}</p>
                 </td>
                 <td>
-                    <input type="text" name="readyInMinutes" id = "readyInMinutes" ng-model="recipe.readyInMinutes">
-                </td>
-                <td>
-                    <input type="text" size="10" name="servings" id="servings" ng-model="recipe.servings">
+                    <p>{{r.servings}}</p>
                 </td>
             </tr>
             </table>
@@ -81,7 +84,7 @@
                     cursor: pointer;
                     text-align: center">Ingredients</button>
                     <div>
-                        <table ng-init="ingredients = [{name:'Spinach',aisle:'18',amount:'3',unit:'bags'}];"> <!--*ngFor='let i of recipe.ingredients'-->
+                        <table > <!--*ngFor='let i of recipe.ingredients'-->
                             <tr>
                                 <th>
                                     Name
@@ -99,22 +102,19 @@
                                     Quantity
                                 </th>
                             </tr>
-                            <tr>
+                            <tr *ngFor="let i of r.ingredients;">
                                     <td>
-                                            <input type="text" size="10" name="name" id="name" ng-model="ing.name">
+                                        <p>{{i.name}}</p>
                                             <!-- {{ i.name }} -->
                                     </td>
                                     <td>
-                                            <input type="text" size="10" name="aisle" id="aisle" ng-model="ing.aisle">
-                                            <!-- {{ i.aisle }} -->
+                                        <p>{{i.aisle}}</p>
                                     </td>
                                     <td>
-                                            <input type="text" size="10" name="amount" id="amount" ng-model="ing.amount">
-                                            <!-- {{ i.amount }} -->
+                                        <p>{{i.amount}}</p>
                                     </td>
                                     <td>
-                                            <input type="text" size="10" name="unit" id="unit" ng-model="ing.unit">
-                                            <!-- {{ i.unit }} -->
+                                        <p>{{i.unit}}</p>
                                     </td>
                                     <td>
                                         <input type="text" size="10" name="quantity" id="quantity">
@@ -126,4 +126,3 @@
 
         </form>
     </div>
-</div>
