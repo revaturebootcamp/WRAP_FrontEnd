@@ -17,6 +17,7 @@ import { SpoonacularService } from './services/spoonacular.service';
 import { UserService } from './services/user.service';
 import { CurrentSession } from './data/CurrentSession';
 import { RecipewidgetComponent } from './components/recipewidget/recipewidget.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { RecipewidgetComponent } from './components/recipewidget/recipewidget.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [UserService, CurrentSession, SpoonacularService],
   bootstrap: [AppComponent]
