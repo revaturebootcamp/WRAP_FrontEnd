@@ -3,6 +3,7 @@ import { SpoonacularService } from 'src/app/services/spoonacular.service';
 import { Recipe } from 'src/app/data/recipe';
 import { UserService } from 'src/app/services/user.service';
 import { Ingredient } from 'src/app/data/ingredient';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -11,7 +12,7 @@ import { Ingredient } from 'src/app/data/ingredient';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private ss: SpoonacularService, private us: UserService) { }
+  constructor(private ss: SpoonacularService, private us: UserService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -101,7 +102,10 @@ export class SearchComponent implements OnInit {
 
     
   }
-    
+  navigateToRecipesPage()
+  {
+    this.router.navigate(['recipes']);
+  } 
   
 
 }
