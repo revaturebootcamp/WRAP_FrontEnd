@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
           user.username = this.username;
           this.cs.user = user;
           console.log(this.cs.user)
-          this.getRecipes()         
+          this.getRecipes()   
+          this.cs.isUserLoggedIn.next(true);      
         } else {
           alert("Unsuccesful login attempt, please try again.")
           window.location.reload();

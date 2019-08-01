@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 import { Recipe } from '../data/recipe';
+import { CurrentSession } from '../data/CurrentSession';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ export class UserService
 {
 
   private static urlPrefix = "http://3.15.23.130:8085/WRAP/useraccount"
-  constructor(private http: HttpClient, private router:Router) 
+  //private static urlPrefix = "http://localhost:8085/WRAP/useraccount"
+  constructor(private http: HttpClient, private router:Router, private cs: CurrentSession) 
   {
     
   }
@@ -37,6 +39,12 @@ export class UserService
   {
     return this.http.get<Object[]>(UserService.urlPrefix + "/recipe/find/all", UserService.options);
   }
+
+  logout(){
+    return this.http.get<boolean>(UserService.urlPrefix + "/logout", UserService.options);
+  }
+  //This method is called if the page refreshes and loses track of the current session for the logged in user
+  
 
   verifyLogin()
   {
