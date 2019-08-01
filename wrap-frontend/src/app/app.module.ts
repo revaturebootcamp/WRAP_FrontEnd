@@ -16,6 +16,7 @@ import { RecipesComponent } from './components/recipes/recipes.component';
 import { SpoonacularService } from './services/spoonacular.service';
 import { UserService } from './services/user.service';
 import { CurrentSession } from './data/CurrentSession';
+import { RecipewidgetComponent } from './components/recipewidget/recipewidget.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CurrentSession } from './data/CurrentSession';
     FavoritesComponent,
     SearchComponent,
     LoginComponent,
-    RecipesComponent
+    RecipesComponent,
+    RecipewidgetComponent
   ],
   imports: [
     BrowserModule,
