@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { registerLocaleData } from '@angular/common';
+// import { registerLocaleData } from '@angular/common';
 import { RegisterComponent } from './components/register/register.component';
 import { IngredientsComponent } from './components/ingredients/ingredients.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
+import { UserService } from './services/user.service';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 
@@ -40,8 +41,17 @@ const routes: Routes = [
     component: SearchComponent
   },
   {
-    path: "home",
-    component: HomeComponent
+    path : "reciept",
+    component: LoginComponent
+  },
+  {
+    path: "",
+    component: LoginComponent
+  },
+  {
+    path: "**",
+    redirectTo: "home",
+    pathMatch: "full"
   }
 ];
 
@@ -49,4 +59,10 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule 
+{
+  constructor(private userService:UserService)
+  {
+    userService.verifyLogin();
+  }
+}

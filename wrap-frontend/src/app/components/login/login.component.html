@@ -26,17 +26,18 @@
             -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
             box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3)"></p>
           <p class="remember_me">
-            <label>
+           <!-- <label>
               <input type="checkbox" name="remember_me" id="remember_me">
               Remember me on this computer
-            </label>
+            </label>-->
           </p>
           <p (click)="logIn()" class="submit"><input type="submit" name="commit" value="Login"></p>
         </form>
+        <button (click)="navigateToRegisterPage()">Register</button>
       </div>
-      
+      <!--
       <div class="login-help" style="text-align:center">
         <p>Forgot your password? <a href="#">Click here to reset it</a>.</p>
-      </div>
+      </div>-->
 </body>
   </html>

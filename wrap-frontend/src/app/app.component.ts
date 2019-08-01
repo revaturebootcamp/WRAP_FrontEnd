@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SpoonacularService } from './services/spoonacular.service';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,9 @@ export class AppComponent {
   component() {}
   
   title = 'wrap-frontend';
+
+  ngOnInit () 
+  {
+    
+  }
 }
