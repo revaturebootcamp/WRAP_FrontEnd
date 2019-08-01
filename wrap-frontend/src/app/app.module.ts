@@ -13,9 +13,11 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
+import { SpoonacularService } from './services/spoonacular.service';
 import { UserService } from './services/user.service';
 import { CurrentSession } from './data/CurrentSession';
 import { RecipewidgetComponent } from './components/recipewidget/recipewidget.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -34,9 +36,10 @@ import { RecipewidgetComponent } from './components/recipewidget/recipewidget.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
-  providers: [UserService, CurrentSession],
+  providers: [UserService, CurrentSession, SpoonacularService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
