@@ -1,9 +1,8 @@
-
-        <div class="recipeComponent">
-                <button class="block" id="recipeInfo" (click)="toggleVisibility()">Recipe</button>
+        <div class="recipeComponent" ng-app>
+                <button class="block" id="recipeInfo" (click)="toggleVisibility(); getRecipeInfoByID(id)">Recipe</button>
                 <div [hidden]="visibility">
                     <form>
-                        <table>
+                        <table ng-init="recipe = [{title:'tossed salad',instructions:'toss them',readyInMinutes:'32',servings:'2'}];">
                         <tr>
                             <th>
                                 Name
@@ -20,16 +19,16 @@
                         </tr>
                         <tr>
                             <td>
-                                <input type="text" name= "title" id = "title">
+                                <input type="text" name= "title" id = "title" ng-model="recipe.title">
                             </td>
                             <td>
-                                <textarea name="instructions" id="instructions" form="add" maxlength="250"></textarea>
+                                <textarea name="instructions" id="instructions" form="add" maxlength="250" ng-model="recipe.instructions"></textarea>
                             </td>
                             <td>
-                                <input type="text" name="readyInMinutes" id = "readyInMinutes">
+                                <input type="text" name="readyInMinutes" id = "readyInMinutes" ng-model="recipe.readyInMinutes">
                             </td>
                             <td>
-                                <input type="text" size="10" name="servings" id="servings">
+                                <input type="text" size="10" name="servings" id="servings" ng-model="recipe.servings">
                             </td>
                         </tr>
                         </table>
@@ -82,7 +81,7 @@
                                 cursor: pointer;
                                 text-align: center">Ingredients</button>
                                 <div>
-                                    <table *ngFor='let i of recipe.ingredients'>
+                                    <table ng-init="ingredients = [{name:'Spinach',aisle:'18',amount:'3',unit:'bags'}];"> <!--*ngFor='let i of recipe.ingredients'-->
                                         <tr>
                                             <th>
                                                 Name
@@ -102,20 +101,20 @@
                                         </tr>
                                         <tr>
                                                 <td>
-                                                        <!-- <input type="text" size="10" name="name" id="name"> -->
-                                                        {{ i.name }}
+                                                        <input type="text" size="10" name="name" id="name" ng-model="ing.name">
+                                                        <!-- {{ i.name }} -->
                                                 </td>
                                                 <td>
-                                                        <!-- <input type="text" size="10" name="aisle" id="aisle"> -->
-                                                        {{ i.aisle }}
+                                                        <input type="text" size="10" name="aisle" id="aisle" ng-model="ing.aisle">
+                                                        <!-- {{ i.aisle }} -->
                                                 </td>
                                                 <td>
-                                                        <!-- <input type="text" size="10" name="amount" id="amount"> -->
-                                                        {{ i.amount }}
+                                                        <input type="text" size="10" name="amount" id="amount" ng-model="ing.amount">
+                                                        <!-- {{ i.amount }} -->
                                                 </td>
                                                 <td>
-                                                        <!-- <input type="text" size="10" name="unit" id="unit"> -->
-                                                        {{ i.unit }}
+                                                        <input type="text" size="10" name="unit" id="unit" ng-model="ing.unit">
+                                                        <!-- {{ i.unit }} -->
                                                 </td>
                                                 <td>
                                                     <input type="text" size="10" name="quantity" id="quantity">
