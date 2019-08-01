@@ -50,10 +50,8 @@ export class LoginComponent implements OnInit {
   getRecipes(){
     this.us.getRecipes().subscribe(
       data => {
-        console.log(data);
         for (let i in data){
-          console.log(data[0]["id"]);
-          this.populateRecipeInfo(data[0]["id"]);
+          this.populateRecipeInfo(data[i]["id"]);
         }  
       }, error => {
         console.log("Failed to get all of this user's recipes :(");
