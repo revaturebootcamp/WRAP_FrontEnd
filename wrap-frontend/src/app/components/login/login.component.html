@@ -4,10 +4,10 @@
     Login Page
   </title>
 </head>
-<body style="font: 13px/20px; color: #404040; background: #fcb603">
+<body style="font: 13px/20px; background-color: rgb(250, 172, 108)">
     <div class="login" style="text-align:center">
-      <br><br>
-      <h1>WRAP Member Login</h1>
+      <br><br><br>
+      <h1 >Login</h1>
         <form method="post" action="">
           <p><input type="text" name="login" [(ngModel)]="username" value="" placeholder="Username or Email" style="position: relative;
             margin: 30px auto;
@@ -25,15 +25,19 @@
             border-radius: 3px;
             -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
             box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3)"></p>
-          <p class="remember_me">
-           <!-- <label>
-              <input type="checkbox" name="remember_me" id="remember_me">
-              Remember me on this computer
-            </label>-->
-          </p>
-          <p (click)="logIn()" class="submit"><input type="submit" name="commit" value="Login"></p>
+         
+          <p (click)="logIn()" hidden="true" class="submit"><input type="submit" name="commit" value="Login"></p>
+          <a style="color:white" (click)="logIn()" class="btn btn-success btn-lg" role="button">Log in
+              <i class="fas fa-sign-in-alt"></i>
+        </a>
+        <br><br><br>
+        <h5>New to WRAP? Create a new account here:</h5>
+          <a style="color:white" (click)="navigateToRegisterPage()" class="btn btn-primary btn-lg" role="button">Sign Up
+              <i class="fas fa-user-plus"></i>
+        </a>
+        
         </form>
-        <button (click)="navigateToRegisterPage()">Register</button>
+        <br><br><br><br><br><br><br>
       </div>
       <!--
       <div class="login-help" style="text-align:center">

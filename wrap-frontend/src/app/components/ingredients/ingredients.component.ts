@@ -48,16 +48,15 @@ export class IngredientsComponent implements OnInit {
   changeRowColor(idIn: string)
   {
     let rowchange = document.getElementById(idIn);
-    if(rowchange.style.backgroundColor == "blue")
+    if(rowchange.style.backgroundColor == "darksalmon")
     {
-      if(confirm('Are you sure you want to uncheck this item?'))
-      {
+      
         rowchange.style.backgroundColor = "white";
-      }
+      
     }
     else
     {
-      rowchange.style.backgroundColor = "blue";
+      rowchange.style.backgroundColor = "darksalmon";
     }
   }
 
