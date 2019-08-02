@@ -47,6 +47,7 @@ user =
           else
           {
             alert('User account creation failed!\rPlease try another username.');
+            window.location.reload();
           }
         },
         error =>
