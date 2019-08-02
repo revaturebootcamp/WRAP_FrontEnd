@@ -49,7 +49,7 @@ export class RecipewidgetComponent implements OnInit {
       }
   }
 
-  private recipeIdString (id : string) {
+  recipeIdString (id : string) {
     return RecipewidgetComponent.ID_PREFIX + id;
     
   }
