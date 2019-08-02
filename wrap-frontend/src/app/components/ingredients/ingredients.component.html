@@ -1,4 +1,5 @@
-<div>
+<div style="font-size:30px;" align="center">
+    <br>
         <h1>Now Viewing Your Ingredients List!</h1>
         <hr>
         <table>
@@ -6,19 +7,16 @@
                 <th></th>
                 <th>Ingredient</th>
                 <th>Quantity</th>
-                <th>Modified</th>
-                <th>Total</th> 
-                <th>Unit</th>          
+                <th>Amount</th>          
             </thead>
             <tbody *ngFor="let r of ingredients">
                 <tr id={{ingredientIdString(r.id)}}>
-                    <td><button (click)="changeRowColor(ingredientIdString(r.id))">Got it!</button></td>
+                    <td><button (click)="changeRowColor(ingredientIdString(r.id))"><i class="fas fa-check-circle"></i></button></td>
                     <td>{{r.name}}</td>
                     <td>{{r.amount}}</td>
-                    <td>{{r.quantity}}</td>
-                    <td>{{r.amount+r.quantity}}</td>
                     <td>{{r.unit}}</td>
                 </tr>
             </tbody>
         </table>
+        <br><br><br>
     </div>

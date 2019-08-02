@@ -1,5 +1,6 @@
-<div class="centered">
-    <h1>Register For New Account</h1><hr>
+<div style="background-color: aquamarine" align="center">
+    <br><br>
+    <h1>Register For New Account</h1>
     <br/>
     <span>Enter Your New Username Below:</span><br/>
     <input type="text" #username name="username" placeholder="Please enter your new username here!" size=40 required/>
@@ -9,5 +10,6 @@
     <br/><span>Reenter Your Password Below:</span><br/>
     <input type="password" #password2 name="password2" placeholder="Please reenter your password here!" size=40 required/><br/>
     <br/><br/>
-    <button (click)="registerUser(username.value, password1.value, password2.value)">REGISTER ACCOUNT</button>
+    <button type="button" class="btn btn-primary" (click)="registerUser(username.value, password1.value, password2.value)">REGISTER ACCOUNT</button>
+    <br><br> <br><br> <br><br> <br><br><br><br> <br><br> <br><br>
 </div>
