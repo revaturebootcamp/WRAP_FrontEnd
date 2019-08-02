@@ -11,7 +11,7 @@ export class IngredientsComponent implements OnInit {
 
   private static ID_PREFIX : string = "ingredient_list_id_";
 
-  private ingredients : Ingredient[] = [];
+  ingredients : Ingredient[] = [];
 
   constructor(private curSession : CurrentSession) { }
 
@@ -39,7 +39,7 @@ export class IngredientsComponent implements OnInit {
     this.ingredients = Array.from( ingredientMap.values() );
   }
 
-  private ingredientIdString (id : string) {
+  public ingredientIdString (id : string) {
     console.log(IngredientsComponent.ID_PREFIX + id)
     return IngredientsComponent.ID_PREFIX + id;
     
